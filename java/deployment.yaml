@@ -26,6 +26,8 @@ spec:
               value: "TRUE" # Mojang'ın kullanım şartlarını kabul ediyorsunuz
             - name: MEMORY
               value: "2G" # Sunucunun kullanacağı bellek miktarı
+            - name: ONLINE_MODE
+              value: "FALSE"
           volumeMounts:
             - name: minecraft-data
               mountPath: /data # Minecraft verileri burada saklanacak
