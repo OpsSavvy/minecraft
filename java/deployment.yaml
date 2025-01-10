@@ -25,7 +25,7 @@ spec:
             - name: EULA
               value: "TRUE" # Mojang'ın kullanım şartlarını kabul ediyorsunuz
             - name: MEMORY
-              value: "2G" # Sunucunun kullanacağı bellek miktarı
+              value: "4G" # Sunucunun kullanacağı bellek miktarı
             - name: ONLINE_MODE
               value: "FALSE"
           volumeMounts:
