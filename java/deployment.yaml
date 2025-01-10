@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-java
+  namespace: minecraft
+  labels:
+    app: minecraft-bedrock
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-java
+  template:
+    metadata:
+      labels:
+        app: minecraft-java
+    spec:
+      containers:
+        - name: minecraft-java
+          image: itzg/minecraft-server
+          ports:
+            - containerPort: 25565
+              protocol: TCP
+          env:
+            - name: EULA
+              value: "TRUE" # Mojang'ın kullanım şartlarını kabul ediyorsunuz
+            - name: MEMORY
+              value: "2G" # Sunucunun kullanacağı bellek miktarı
+          volumeMounts:
+            - name: minecraft-data
+              mountPath: /data # Minecraft verileri burada saklanacak
+      volumes:
+        - name: minecraft-data
+          persistentVolumeClaim:
+            claimName: minecraft-java-pvc

@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: minecraft-bedrock
+  namespace: minecraft
   labels:
     app: minecraft-bedrock
 spec:
@@ -24,8 +25,8 @@ spec:
         - name: EULA
           value: "TRUE"
         volumeMounts:
-        - mountPath: /data
-          name: bedrock-data
+        - name: bedrock-data
+          mountPath: /data
       volumes:
       - name: bedrock-data
         persistentVolumeClaim:
