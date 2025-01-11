@@ -8,10 +8,12 @@ spec:
   selector:
     run: mc-router
   ports:
-    - protocol: TCP
+    - name: proxy
+      protocol: TCP
       port: 25565
       targetPort: 25565
-    - protocol: TCP
+    - name: web
+      protocol: TCP
       port: 8080
       targetPort: 8080
   
