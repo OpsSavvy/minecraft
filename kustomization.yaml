@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - mc-router/
   - mc1/
+  - mc2/
