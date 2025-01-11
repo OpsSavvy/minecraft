@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mc-router
+  namespace: minecraft
+spec:
+  type: ClusterIP
+  selector:
+    run: mc-router
+  ports:
+    - protocol: TCP
+      port: 25565
+      targetPort: 25565
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: mc2
+  name: mc2
+  namespace: minecraft
+spec:
+  selector:
+    matchLabels:
+      run: mc2
+  template:
+    metadata:
+      labels:
+        run: mc2
+    spec:
+      securityContext:
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - image: itzg/minecraft-server
+        name: mc2
+        env:
+        - name: EULA
+          value: "TRUE"
+        ports:
+        - containerPort: 25565
+        volumeMounts:
+        - name: data
+          mountPath: /data
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: mc2
