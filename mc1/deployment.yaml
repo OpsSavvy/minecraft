@@ -21,6 +21,8 @@ spec:
       - image: itzg/minecraft-server
         name: mc1
         env:
+        - name: TYPE
+          value: FORGE
         - name: EULA
           value: "TRUE"
         - name: ONLINE_MODE
