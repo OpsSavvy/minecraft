@@ -27,6 +27,8 @@ spec:
           value: "1.12.1"
         - name: FORGE_VERSION
           value: "52.1.0"
+        - name: FORGE_INSTALLER_URL
+          value: "https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.1-52.1.0/forge-1.21.1-52.1.0-installer.jar"
         - name: FORGE_FORCE_REINSTALL
           value: "TRUE"
         - name: EULA
