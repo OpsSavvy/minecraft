@@ -23,6 +23,12 @@ spec:
         env:
         - name: TYPE
           value: FORGE
+        - name: VERSION
+          value: "1.12.1"
+        - name: FORGE_VERSION
+          value: "14.23.5.2854"
+        - name: FORGE_FORCE_REINSTALL
+          value: "TRUE"
         - name: EULA
           value: "TRUE"
         - name: ONLINE_MODE
